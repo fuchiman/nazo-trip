@@ -141,7 +141,7 @@
   }
   async function closeClock(){
     await hideModal(clockModal);
-    if(!cleared&&minutes>0&&minutes<=370&&!successShown){
+    if(!cleared&&minutes>0&&minutes<=330&&!successShown){
       successShown=true;g.setFlag('ep1SuccessShown',true);
       $('status-message').textContent='窓の外の様子が変わった……';
       // 景色が変化したことを認識できる間を置いてからメッセージを出す。
