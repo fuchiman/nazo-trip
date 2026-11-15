@@ -1,34 +1,180 @@
+
 <!DOCTYPE html>
 <html lang="ja">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <meta content="#e9eeeb" name="theme-color"/>
-  <title>
-   クリア者一覧｜修学旅行の謎
-  </title>
-  <link href="css/common.css" rel="stylesheet"/>
-  <link href="css/theme.css" rel="stylesheet"/>
- </head>
- <body class="simple-page">
-  <main class="simple-page-card">
-   <p class="page-kicker">
-    SCHOOL TRIP MYSTERY
-   </p>
-   <h1>
-    クリア者一覧
-   </h1>
-   <p>
-    クリア者一覧は、公開用の記録機能を準備中です。
-   </p>
-   <p class="simple-page-note">
-    現在の初回クリア記録は、この端末のブラウザに保存されています。全プレイヤーの一覧は、共有データベースを接続した後に表示できるようになります。
-   </p>
-   <a class="button button-primary" href="index.html">
-    トップに戻る
-   </a>
-  </main>
-  <script type="module" src="./js/firebase.js"></script>
- </body>
-</html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101d35">
+  <title>クリア者一覧</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 40px 16px;
+      background: #101d35;
+      color: #f4f6fb;
+      font-family: system-ui, sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0;
+      text-align: center;
+      font-size: 28px;
+      letter-spacing: 0.08em;
+    }
+
+    .subtitle {
+      margin: 10px 0 32px;
+      text-align: center;
+      color: #aab7cc;
+      font-size: 14px;
+    }
+
+    .list-box {
+      overflow: hidden;
+      border: 1px solid #34445f;
+      border-radius: 14px;
+      background: #192944;
+    }
+
+    .list-header,
+    .clearer {
+      display: grid;
+      grid-template-columns: 54px 1fr auto;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+    }
+
+    .list-header {
+      background: #223653;
+      color: #bdcbe0;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .clearer {
+      min-height: 68px;
+      border-top: 1px solid #34445f;
+    }
+
+    .rank {
+      color: #aab7cc;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .rank.top {
+      color: #ffd36a;
+      font-size: 19px;
+    }
+
+    .nickname {
+      min-width: 0;
+      overflow-wrap: anywhere;
+      font-weight: bold;
+    }
+
+    .date {
+      color: #bdcbe0;
+      font-size: 12px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .message {
+      padding: 36px 16px;
+      color: #bdcbe0;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .count {
+      margin: 16px 4px 0;
+      color: #aab7cc;
+      font-size: 13px;
+      text-align: right;
+    }
+
+    .back {
+      display: block;
+      width: fit-content;
+      margin: 32px auto 0;
+      padding: 12px 24px;
+      border: 1px solid #60738f;
+      border-radius: 999px;
+      color: #f4f6fb;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .back:hover {
+      background: #263c5c;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 30px 12px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .list-header,
+      .clearer {
+        grid-template-columns: 38px 1fr;
+        gap: 8px;
+        padding: 14px 12px;
+      }
+
+      .date {
+        grid-column: 2;
+        text-align: left;
+        white-space: normal;
+      }
+
+      .list-header span:last-child {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <h1>CLEARERS</h1>
+    <p class="subtitle">この謎を解き明かした人たち</p>
+
+    <section class="list-box">
+      <div class="list-header">
+        <span>順位</span>
+        <span>ニックネーム</span>
+        <span>クリア日時</span>
+      </div>
+
+      <div id="clearers-list" aria-live="polite">
+        <p class="message">読み込み中……</p>
+      </div>
+    </section>
+
+    <p class="count" id="clearers-count"></p>
+
+    <a class="back" href="./index.html">トップページへ戻る</a>
+  </main>
+
+  <script type="module" src="./js/firebase.js"></script>
+  <script type="module" src="./js/clearers.js"></script>
+</body>
+</html>
