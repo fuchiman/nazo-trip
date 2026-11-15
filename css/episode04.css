@@ -400,3 +400,19 @@
     height: 168px;
   }
 }
+
+/* 絵画の連打によるSafariの画面拡大を防止 */
+#painting-wrap,
+#painting-frame,
+#tap-left,
+#tap-right {
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+#tap-left,
+#tap-right {
+  -webkit-tap-highlight-color: transparent;
+}
