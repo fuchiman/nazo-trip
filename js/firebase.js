@@ -1,4 +1,3 @@
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
 
 import {
@@ -15,15 +14,15 @@ import {
   getDocs,
   query,
   orderBy,
+  Timestamp,
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
 // ========================================
 // Firebase設定
-// Firebase Consoleのアプリ設定からコピーする
 // ========================================
 
-const firebaseConfig = {
+  const firebaseConfig = {
     apiKey: "AIzaSyBY0ZWOA81JbmpqOfEzOdpYUAUzD8zQqw4",
     authDomain: "nazo-trip.firebaseapp.com",
     projectId: "nazo-trip",
@@ -64,57 +63,72 @@ async function ensureSignedIn() {
 }
 
 // ========================================
-// クリア記録を保存
+// クリア記録の保存
 // ========================================
 
-async function saveClearRecord(nickname) {
+async function saveClearRecord(nickname, firstClearAt) {
   const name = String(nickname).trim();
 
   if (!name || name.length > 16) {
     throw new Error("ニックネームは1〜16文字で入力してください。");
   }
 
+  const clearDate = firstClearAt?.toDate
+    ? firstClearAt.toDate()
+    : new Date(firstClearAt);
+
+  if (Number.isNaN(clearDate.getTime())) {
+    throw new Error("クリア日時が正しくありません。");
+  }
+
   const user = await ensureSignedIn();
   const userRef = doc(db, "clearers", user.uid);
 
-  // 既存記録があるか確認
   const existing = await getDoc(userRef);
 
-  const data = {
-    nickname: name,
-    clearedAt: serverTimestamp()
-  };
+  if (existing.exists()) {
+    // 既に記録がある場合はニックネームだけ変更
+    await setDoc(userRef, {
+      nickname: name
+    }, { merge: true });
 
-  if (!existing.exists()) {
-    data.createdAt = serverTimestamp();
+  } else {
+    // 初回登録
+    await setDoc(userRef, {
+      nickname: name,
+      firstClearAt: Timestamp.fromDate(clearDate),
+      createdAt: serverTimestamp()
+    });
   }
-
-  // UIDをドキュメントIDにする
-  await setDoc(userRef, data, { merge: true });
 
   return user.uid;
 }
 
 // ========================================
-// クリア者一覧を取得
+// クリア者一覧の取得
 // ========================================
 
 async function getClearers() {
   const q = query(
     collection(db, "clearers"),
-    orderBy("clearedAt", "desc")
+    orderBy("firstClearAt", "asc")
   );
 
   const snapshot = await getDocs(q);
 
-  return snapshot.docs.map(document => ({
-    id: document.id,
-    ...document.data()
-  }));
+  return snapshot.docs.map(document => {
+    const data = document.data();
+
+    return {
+      id: document.id,
+      nickname: data.nickname,
+      firstClearAt: data.firstClearAt?.toDate().toISOString() || null
+    };
+  });
 }
 
 // ========================================
-// 他のJavaScriptから使えるようにする
+// 公開API
 // ========================================
 
 window.FirebaseAPI = {

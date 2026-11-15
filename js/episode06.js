@@ -216,18 +216,51 @@
     if (event.target === gateModal) hide(gateModal);
   });
 
-  $("nickname-save-button").addEventListener("click", () => {
-    const nickname = $("clear-nickname").value.trim();
+$("nickname-save-button").addEventListener("click", async () => {
+  const nickname = $("clear-nickname").value.trim();
+  const errorMessage = $("nickname-error");
+  const saveButton = $("nickname-save-button");
 
-    if (!nickname) {
-      $("nickname-error").textContent = "ニックネームを入力してください。";
-      $("clear-nickname").focus();
-      return;
-    }
+  if (!nickname) {
+    errorMessage.textContent = "ニックネームを入力してください。";
+    $("clear-nickname").focus();
+    return;
+  }
 
+  if (nickname.length > 16) {
+    errorMessage.textContent = "ニックネームは16文字以内にしてください。";
+    $("clear-nickname").focus();
+    return;
+  }
+
+  saveButton.disabled = true;
+  errorMessage.textContent = "記録を保存しています……";
+
+  try {
+    // 初回クリア記録を取得
+    const record = game.getFirstClear();
+
+    // Firebaseに保存
+    await window.FirebaseAPI.saveClearRecord(
+      nickname,
+      record.firstClearAt
+    );
+
+    // Firebaseへの保存成功後、従来どおりローカルにも保存
     const savedRecord = game.saveFirstClearNickname(nickname);
+
     displayClearRecord(savedRecord, false);
-  });
+
+  } catch (error) {
+    console.error("[Firebase] 保存エラー:", error);
+
+    errorMessage.textContent =
+      "保存に失敗しました。通信環境を確認して、もう一度お試しください。";
+
+  } finally {
+    saveButton.disabled = false;
+  }
+});
 
   $("clear-nickname").addEventListener("keydown", event => {
     if (event.key === "Enter") $("nickname-save-button").click();
