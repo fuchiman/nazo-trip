@@ -261,6 +261,10 @@
   transform: translate(-50%, -50%);
   z-index: 5;
   transform-origin: 50% 6%;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 .painting-wrap[hidden] {
   display: none;
