@@ -33,26 +33,26 @@
     }).format(date);
   }
 
-  function createClearerItem(record, index) {
-    const item = document.createElement("div");
-    item.className = "clearer";
+function createClearerItem(record, index) {
+  const item = document.createElement("div");
+  item.className = "clearer";
 
-    const rank = document.createElement("span");
-    rank.className = "rank" + (index < 3 ? " top" : "");
-    rank.textContent = `${index + 1}`;
+  const order = document.createElement("span");
+  order.className = "rank";
+  order.textContent = `${index + 1}番目`;
 
-    const nickname = document.createElement("span");
-    nickname.className = "nickname";
-    nickname.textContent = record.nickname || "名無し";
+  const nickname = document.createElement("span");
+  nickname.className = "nickname";
+  nickname.textContent = record.nickname || "名無し";
 
-    const date = document.createElement("span");
-    date.className = "date";
-    date.textContent = formatDate(record.firstClearAt);
+  const date = document.createElement("span");
+  date.className = "date";
+  date.textContent = formatDate(record.firstClearAt);
 
-    item.append(rank, nickname, date);
+  item.append(order, nickname, date);
 
-    return item;
-  }
+  return item;
+}
 
   async function loadClearers() {
     try {
@@ -72,18 +72,19 @@
         return;
       }
 
-      // 念のためクリア日時の古い順に並べる
-      clearers.sort((a, b) => {
-        return new Date(a.firstClearAt) - new Date(b.firstClearAt);
-      });
+clearers.sort((a, b) => {
+  return new Date(b.firstClearAt) - new Date(a.firstClearAt);
+});
 
       listElement.replaceChildren();
 
-      clearers.forEach((record, index) => {
-        listElement.appendChild(
-          createClearerItem(record, index)
-        );
-      });
+clearers.forEach((record, index) => {
+  const clearOrder = clearers.length - index;
+
+  listElement.appendChild(
+    createClearerItem(record, clearOrder - 1)
+  );
+});
 
       countElement.textContent = `クリア者 ${clearers.length}人`;
 
