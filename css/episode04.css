@@ -1,0 +1,398 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: #19232494;
+  backdrop-filter: blur(3px);
+}
+.modal-backdrop[hidden] {
+  display: none;
+}
+.object-modal {
+  position: relative;
+  width: min(100%, 430px);
+  padding: 28px;
+  border-radius: 18px;
+  background: #fffdf7;
+  box-shadow: 0 20px 60px #0004;
+}
+.object-modal h2 {
+  margin: 0 0 14px;
+  font-size: 1.45rem;
+}
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 13px;
+  z-index: 5;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: #eeece5;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.modal-description {
+  color: #5e6864;
+  line-height: 1.8;
+  margin: 0;
+}
+.object-modal > .button,
+.message-dialog .button {
+  width: 100%;
+  margin-top: 18px;
+}
+.panel-eyebrow {
+  color: #637b7b;
+  font-size: .7rem;
+  letter-spacing: .2em;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.hotel-shell {
+  width: min(100% - 28px, 860px);
+  margin: 0 auto;
+  padding: 24px 0 32px;
+}
+.hotel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.episode-chip {
+  border: 1px solid #d9d0c1;
+  background: #fffdf8;
+  color: #5a4e3c;
+  border-radius: 999px;
+  padding: 9px 14px;
+  font-size: .78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.hotel-heading {
+  text-align: center;
+  padding: 20px 8px 18px;
+}
+.hotel-kicker {
+  margin: 0 0 8px;
+  color: #7c6747;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .2em;
+}
+.hotel-heading h1 {
+  font-size: clamp(1.8rem, 6vw, 2.65rem);
+  letter-spacing: .04em;
+}
+.hotel-heading > p:last-child {
+  color: #746d63;
+  margin: 10px 0 0;
+  font-size: .9rem;
+}
+
+/* ホテル客室の壁ステージ */
+.room-stage {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  height: clamp(360px, 56vw, 490px);
+  border-radius: 24px;
+  background: linear-gradient(180deg, #dfd4c2 0%, #cfc0aa 68%, #bfa98e 100%);
+  box-shadow:
+    inset 0 0 0 1px #ffffff70,
+    inset 0 24px 48px #5d4a321a,
+    0 18px 40px #3a2e1f24;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.wallpaper-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: .22;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 26px,
+      #8b755726 26px 28px
+    );
+  pointer-events: none;
+}
+.wall-wainscot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 18%;
+  background: linear-gradient(180deg, #987b59 0%, #7d6243 100%);
+  border-top: 4px solid #b59873;
+  box-shadow: inset 0 6px 14px #2f211133;
+  pointer-events: none;
+}
+.wall-sconce {
+  position: absolute;
+  top: 24%;
+  width: 18px;
+  height: 54px;
+  border-radius: 9px;
+  background: radial-gradient(circle at 50% 35%, #fff9db 0%, #f3d284 55%, #b88a3b 100%);
+  box-shadow: 0 0 28px 10px #ffe69c55;
+  opacity: .82;
+  pointer-events: none;
+}
+.wall-sconce-left { left: 9%; }
+.wall-sconce-right { right: 9%; }
+
+/* 隠し空間（壁のくぼみ） */
+.secret-niche {
+  position: absolute;
+  left: 50%;
+  top: 47%;
+  width: clamp(190px, 34vw, 250px);
+  height: clamp(165px, 29vw, 215px);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.niche-recess {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #32281e 0%, #4a3b2c 58%, #3c2f23 100%);
+  border: 5px solid #8c7050;
+  box-shadow:
+    inset 0 12px 24px #0f0b07cc,
+    inset 0 0 0 2px #241b13,
+    0 2px 6px #ffffff55;
+  overflow: hidden;
+}
+.niche-backwall {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+/* 壁に刻まれたカタカナ「イ」：シーサーが置かれている間も一部が少し見える位置・大きさ */
+.hidden-katakana {
+  position: relative;
+  transform: translate(-18px, -10px) rotate(-3deg);
+  font-size: clamp(3.3rem, 6.2vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1;
+  color: #695642;
+  text-shadow:
+    0 1px 0 #8a735a66,
+    0 -1px 1px #1d150ecc;
+  opacity: .72;
+  letter-spacing: 0;
+  pointer-events: none;
+  transition: opacity .5s ease, color .5s ease;
+}
+.secret-niche.is-revealed .hidden-katakana {
+  opacity: .92;
+  color: #7c664e;
+}
+.niche-shelf {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 18px;
+  background: linear-gradient(180deg, #6d553b 0%, #4e3b27 100%);
+  border-top: 1px solid #967857;
+}
+
+/* 金色のシーサー置物 */
+.golden-shisa {
+  position: absolute;
+  left: 53%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  width: clamp(114px, 20vw, 152px);
+  height: clamp(114px, 20vw, 152px);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  filter: drop-shadow(0 8px 10px #0d0804aa);
+  transition: transform .22s ease, opacity .55s ease, filter .22s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.golden-shisa:hover:not(:disabled) {
+  transform: translateX(-50%) scale(1.03);
+  filter: drop-shadow(0 10px 14px #0d0804cc) brightness(1.05);
+}
+.golden-shisa:active:not(:disabled) {
+  transform: translateX(-50%) scale(.98);
+}
+.golden-shisa:disabled {
+  cursor: default;
+}
+.golden-shisa.is-removing {
+  opacity: 0;
+  transform: translateX(-50%) translateY(6px) scale(.94);
+  pointer-events: none;
+}
+.golden-shisa[hidden] {
+  display: none;
+}
+.shisa-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 壁に掛けられた絵画 */
+.painting-wrap {
+  position: absolute;
+  left: 50%;
+  top: 47%;
+  width: clamp(250px, 46vw, 350px);
+  height: clamp(185px, 34vw, 255px);
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  transform-origin: 50% 6%;
+}
+.painting-wrap[hidden] {
+  display: none;
+}
+.painting-wire {
+  position: absolute;
+  left: 50%;
+  top: -18px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #d6b676, #7a5c28);
+  transform: translateX(-50%);
+  box-shadow: 0 2px 4px #0004;
+}
+.painting-wire::before,
+.painting-wire::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  width: 58px;
+  height: 2px;
+  background: #7b6648;
+  transform-origin: left center;
+}
+.painting-wire::before {
+  left: 7px;
+  transform: rotate(158deg);
+}
+.painting-wire::after {
+  left: 7px;
+  transform: rotate(22deg);
+}
+
+.painting-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: clamp(12px, 2.2vw, 18px);
+  border-radius: 10px;
+  background: linear-gradient(145deg, #8b6234 0%, #5e3e1c 48%, #775128 100%);
+  border: 3px solid #a87c47;
+  box-shadow:
+    0 18px 34px #24190e59,
+    inset 0 0 0 2px #3c2610,
+    inset 0 0 12px #d8af7344;
+  transform-origin: 50% 6%;
+}
+.painting-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 4px solid #e7dcc7;
+  box-shadow: inset 0 2px 8px #0005;
+  overflow: hidden;
+  background: #2b4a58;
+}
+.painting-art {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 左右タップ領域：見た目は自然にしつつ十分なタッチ範囲を確保 */
+.painting-tap-zone {
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  width: 50%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 4;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.painting-tap-zone:disabled {
+  cursor: default;
+}
+.tap-left {
+  left: -8px;
+  border-radius: 12px 0 0 12px;
+}
+.tap-right {
+  right: -8px;
+  border-radius: 0 12px 12px 0;
+}
+.painting-tap-zone:focus-visible {
+  outline: 3px solid #f2c47c;
+  outline-offset: -4px;
+}
+
+/* ステータス表示 */
+.hotel-status {
+  text-align: center;
+  min-height: 76px;
+  padding: 16px 8px 4px;
+}
+.status-step {
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  color: #7c6747;
+  margin: 0 0 4px;
+}
+.hotel-status > p:nth-child(2) {
+  margin: 0;
+  color: #4b4339;
+  font-weight: 600;
+}
+
+@media (max-width: 520px) {
+  .hotel-shell {
+    width: min(100% - 20px, 860px);
+    padding-top: 16px;
+  }
+  .hotel-heading {
+    padding: 16px 4px 12px;
+  }
+  .room-stage {
+    height: 360px;
+    border-radius: 18px;
+  }
+  .wall-sconce {
+    display: none;
+  }
+  .painting-wrap {
+    width: min(82%, 300px);
+    height: 205px;
+  }
+  .secret-niche {
+    width: 196px;
+    height: 168px;
+  }
+}

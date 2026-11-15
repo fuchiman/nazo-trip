@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   &starf;1 朝を取り戻せ
+  </title>
+  <link href="../css/common.css" rel="stylesheet"/>
+  <link href="../css/episode01.css" rel="stylesheet"/>
+  <link href="../css/theme.css" rel="stylesheet"/>
+  <script defer="" src="../js/common.js">
+  </script>
+  <script defer="" src="../js/story-text.js">
+  </script>
+  <script defer="" src="../js/episode01.js">
+  </script>
+ </head>
+ <body data-episode="1">
+  <main class="room-shell">
+   <header class="room-header">
+    <a class="back-link" href="../index.html">
+     &larr; トップへ
+    </a>
+    <button class="episode-chip" id="episode-open">
+     EPISODE &starf;1 ⓘ
+    </button>
+   </header>
+   <section class="room-intro">
+    <p class="room-kicker">
+     DAY 1 / MORNING
+    </p>
+    <h1>
+     朝を取り戻せ
+    </h1>
+    <p>
+     &hellip;&hellip;ん？ もうこんな時間？
+    </p>
+   </section>
+   <section class="bedroom">
+    <div class="window-scene" id="window-scene">
+     <div class="sun">
+     </div>
+     <div class="distant-building">
+     </div>
+     <div class="window-mullion vertical">
+     </div>
+     <div class="window-mullion horizontal">
+     </div>
+     <div class="curtain curtain-left">
+     </div>
+     <div class="curtain curtain-right">
+     </div>
+    </div>
+    <button aria-label="時計を見る" class="room-object clock-object" id="clock-object">
+     <span class="clock-body">
+      <svg class="clock-face" viewbox="0 0 240 240">
+       <circle class="clock-rim" cx="120" cy="120" r="108">
+       </circle>
+       <circle class="clock-dial" cx="120" cy="120" r="99">
+       </circle>
+       <g class="ticks">
+       </g>
+       <g class="numbers">
+       </g>
+       <line class="hour-hand" x1="120" x2="120" y1="120" y2="65">
+       </line>
+       <line class="minute-hand" x1="120" x2="120" y1="120" y2="38">
+       </line>
+       <circle class="clock-pin" cx="120" cy="120" r="7">
+       </circle>
+      </svg>
+     </span>
+     <span class="object-hint">
+      時計
+     </span>
+    </button>
+    <button aria-label="ベッド" class="room-object bed-object" id="bed-object">
+     <span class="bed-frame">
+     </span>
+     <span class="mattress">
+     </span>
+     <span class="pillow p1">
+     </span>
+     <span class="pillow p2">
+     </span>
+     <span class="blanket b1">
+     </span>
+     <span class="blanket b2">
+     </span>
+     <span class="blanket b3">
+     </span>
+     <span class="bed-hint">
+      ベッド
+     </span>
+    </button>
+    <div class="desk-object">
+     <div class="desk-top">
+     </div>
+     <div class="desk-leg">
+     </div>
+     <button aria-label="机の上の黄色い箱" class="book book-one gold-box" id="gold-box" type="button">
+      <span aria-hidden="true" class="gold-box-lid">
+      </span>
+     </button>
+    </div>
+    <div class="floor-line">
+    </div>
+   </section>
+   <section class="status-row">
+    <div>
+     <span class="status-label">
+      TIME
+     </span>
+     <strong id="status-time">
+      7:00
+     </strong>
+    </div>
+    <p id="status-message">
+     どうやら、寝過ごしてしまったらしい。
+    </p>
+   </section>
+   <section class="interaction-panel">
+    <p class="panel-eyebrow">
+     ROOM
+    </p>
+    <p>
+     部屋の中は静まり返っている。
+    </p>
+   </section>
+   <footer class="room-footer">
+    <span>
+     気になるところを調べてみよう。
+    </span>
+    <span>
+     進行状況は自動保存されます
+    </span>
+   </footer>
+  </main>
+  <div class="modal-backdrop" id="episode-modal">
+   <section class="object-modal">
+    <button class="modal-close" id="episode-close">
+     &times;
+    </button>
+    <p class="panel-eyebrow">
+     EPISODE &starf;1
+    </p>
+    <h2>
+     朝を取り戻せ
+    </h2>
+    <p class="modal-description">
+     目を覚ますと、部屋には朝日が差し込んでいた。
+     <br/>
+     今日は修学旅行の出発日だったはずだ。
+     <br/>
+     &hellip;&hellip;時計、さっき見たときと同じだっただろうか。気になったら、もう一度確かめてみよう。
+    </p>
+    <button class="button button-primary" id="episode-start">
+     閉じる
+    </button>
+   </section>
+  </div>
+  <div class="modal-backdrop" hidden="" id="clock-modal">
+   <section class="object-modal clock-zoom">
+    <button class="modal-close" id="clock-close">
+     &times;
+    </button>
+    <svg class="clock-face clock-face-large" viewbox="0 0 240 240">
+     <circle class="clock-rim" cx="120" cy="120" r="108">
+     </circle>
+     <circle class="clock-dial" cx="120" cy="120" r="99">
+     </circle>
+     <g class="ticks">
+     </g>
+     <g class="numbers">
+     </g>
+     <line class="hour-hand" x1="120" x2="120" y1="120" y2="65">
+     </line>
+     <line class="minute-hand" x1="120" x2="120" y1="120" y2="38">
+     </line>
+     <circle class="clock-pin" cx="120" cy="120" r="7">
+     </circle>
+    </svg>
+    <div class="clock-arrows" hidden="" id="clock-arrows">
+     <button aria-label="10分戻す" class="arrow-button" id="time-back">
+      ◁
+     </button>
+     <button aria-label="10分進める" class="arrow-button" id="time-forward">
+      ▷
+     </button>
+    </div>
+   </section>
+  </div>
+  <div class="modal-backdrop" hidden="" id="success-modal">
+   <section class="object-modal message-dialog">
+    <p class="panel-eyebrow">
+     &hellip;
+    </p>
+    <h2>
+     間に合う
+    </h2>
+    <button class="button button-primary" id="success-close">
+     閉じる
+    </button>
+   </section>
+  </div>
+  <div class="modal-backdrop" hidden="" id="clear-modal">
+   <section class="object-modal message-dialog">
+    <p class="panel-eyebrow">
+     CLEAR
+    </p>
+    <h2>
+     クリア！
+    </h2>
+    <p>
+     次に進む
+    </p>
+    <button class="button button-primary" id="clear-next">
+     次に進む
+    </button>
+   </section>
+  </div>
+  <div class="modal-backdrop" hidden="" id="bed-modal">
+   <section class="object-modal bed-zoom">
+    <button class="modal-close" id="bed-close">
+     &times;
+    </button>
+    <div class="topdown-bed" id="topdown-bed">
+     <div class="topdown-pillow">
+     </div>
+     <div class="topdown-blanket" id="topdown-blanket">
+     </div>
+     <span class="topdown-letter">
+      ハ
+     </span>
+    </div>
+   </section>
+  </div>
+  <div class="modal-backdrop" hidden="" id="boarding-pass-modal">
+   <section class="object-modal ticket-found-modal">
+    <button aria-label="閉じる" class="modal-close" id="boarding-pass-close" type="button">
+     &times;
+    </button>
+    <p class="panel-eyebrow">
+     FOUND
+    </p>
+    <h2>
+     搭乗券を見つけた！
+    </h2>
+    <p class="modal-description" id="boarding-pass-description">
+     黄色い箱の中に、帰りの飛行機の搭乗券が入っていた。
+    </p>
+    <div aria-label="架空の航空会社の搭乗券" class="boarding-ticket" role="img">
+     <div class="ticket-main">
+      <div class="ticket-brand">
+       SORA AIR
+       <span>
+        BOARDING PASS
+       </span>
+      </div>
+      <div class="ticket-route">
+       <div>
+        <small>
+         FROM
+        </small>
+        <strong>
+         ISG
+        </strong>
+        <span>
+         石垣
+        </span>
+       </div>
+       <b>
+        ✈
+       </b>
+       <div>
+        <small>
+         TO
+        </small>
+        <strong>
+         UKB
+        </strong>
+        <span>
+         神戸
+        </span>
+       </div>
+      </div>
+      <div class="ticket-details">
+       <div>
+        <small>
+         FLIGHT
+        </small>
+        <b>
+         SA 206
+        </b>
+       </div>
+       <div>
+        <small>
+         GATE
+        </small>
+        <b>
+         08
+        </b>
+       </div>
+       <div>
+        <small>
+         SEAT
+        </small>
+        <b>
+         18A
+        </b>
+       </div>
+      </div>
+     </div>
+     <div class="ticket-stub">
+      <div aria-hidden="true" class="ticket-qr">
+      </div>
+      <small>
+       KEEP THIS PASS
+      </small>
+     </div>
+    </div>
+    <p class="ticket-note">
+     これで帰りの飛行機に乗れる&hellip;&hellip;はずだ。
+    </p>
+    <button class="button button-primary" id="boarding-pass-close-button" type="button">
+     閉じる
+    </button>
+   </section>
+  </div>
+ </body>
+</html>
+

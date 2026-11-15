@@ -1,0 +1,109 @@
+.modal-backdrop{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:18px;background:#19232494;backdrop-filter:blur(3px)}
+.modal-backdrop[hidden]{display:none}
+.object-modal{position:relative;width:min(100%,430px);padding:28px;border-radius:18px;background:#fffdf7;box-shadow:0 20px 60px #0004}
+.object-modal h2{margin:0 0 16px;font-size:1.5rem}
+.modal-close{position:absolute;top:10px;right:13px;z-index:5;width:36px;height:36px;border:0;border-radius:50%;background:#eeece5;font-size:1.4rem;cursor:pointer}
+.modal-description{color:#5e6864;line-height:1.8}
+.object-modal>.button,.message-dialog .button{width:100%;margin-top:12px}
+.panel-eyebrow{color:#637b7b;font-size:.7rem;letter-spacing:.2em;font-weight:800;margin:0 0 8px}
+.dolphin-shell{width:min(100% - 28px,900px);margin:0 auto;padding:24px 0 28px}
+.dolphin-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.episode-chip{border:1px solid #d2dfdc;background:#f9fffc;color:#456963;border-radius:999px;padding:9px 14px;font-size:.78rem;font-weight:800;cursor:pointer}
+.dolphin-heading{text-align:center;padding:20px 8px 18px}
+.dolphin-kicker{margin:0 0 8px;color:#477c7d;font-size:.72rem;font-weight:800;letter-spacing:.2em}
+.dolphin-heading h1{font-size:clamp(1.8rem,6vw,2.7rem);letter-spacing:.04em}
+.dolphin-heading>p:last-child{color:#6b8280;margin:10px 0 0;font-size:.9rem}
+.ocean-stage{position:relative;isolation:isolate;overflow:hidden;width:100%;height:clamp(350px,57vw,510px);border-radius:24px;background:linear-gradient(180deg,#b7dfe0 0%,#78bdc2 42%,#317f91 100%);box-shadow:inset 0 0 0 1px #ffffff80,0 18px 40px #24545a20}
+.ocean-sunlight{position:absolute;inset:-20% 15% 20%;background:radial-gradient(ellipse at 50% 0%,#fff9d580,transparent 65%);pointer-events:none}
+.ocean-horizon{position:absolute;left:-10%;right:-10%;top:22%;height:1px;background:#eaffff88;box-shadow:0 9px 24px #eaffff35}
+.ocean-ripple{position:absolute;border:1px solid #e6ffff55;border-radius:50%;transform:rotate(-8deg)}
+.ripple-a{width:80%;height:20%;left:10%;top:12%}.ripple-b{width:110%;height:27%;left:-5%;top:18%}
+.ocean-ellipse{position:absolute;width:min(78%,680px);height:70%;left:50%;top:48%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(ellipse at 50% 42%,#65b5b9 0%,#2f8797 55%,#1b6479 100%);border:2px solid #d8ffff75;box-shadow:0 18px 40px #104f6038,inset 0 0 0 9px #d9ffff12,inset 0 0 0 26px #d9ffff0a}
+.ocean-inner{position:absolute;inset:7%;border:1px solid #d9ffff2c;border-radius:50%;pointer-events:none}
+.dolphin-spots{position:absolute;inset:0}
+.dolphin-spot{position:absolute;left:var(--x);top:var(--y);width:clamp(34px,6vw,52px);height:clamp(34px,6vw,52px);transform:translate(-50%,-50%);border:2px solid #d6f4ee9c;border-radius:50%;background:#d9f4ed28;color:transparent;font-size:0;display:block;cursor:pointer;transition:background .2s,border-color .2s,box-shadow .2s,transform .2s;z-index:2;backdrop-filter:blur(2px);-webkit-tap-highlight-color:transparent}
+.dolphin-spot:disabled{cursor:default}
+.dolphin-spot.is-selected{background:#f5d889;color:#315b61;border-color:#fff5c8;box-shadow:0 0 0 5px #f5d88940,0 5px 16px #123d4a45;transform:translate(-50%,-50%) scale(1.1)}
+.dolphin-spot.is-answer{background:#f8f0c4;color:#315b61;border-color:#fff;box-shadow:0 0 0 7px #fff5c855}
+.dolphin-splash{position:absolute;z-index:4;width:clamp(78px,14vw,118px);height:auto;left:50%;top:50%;opacity:0;transform:translate(-50%,-25%) scale(.65);pointer-events:none;filter:drop-shadow(0 8px 4px #104e5b55)}
+.dolphin-splash.is-visible{animation:dolphin-pop 850ms cubic-bezier(.2,.8,.25,1) forwards}.dolphin-splash.is-staying{opacity:1;transform:translate(-50%,-50%) scale(1);animation:none}
+.dolphin-art{display:block;width:100%;height:auto;overflow:visible;filter:drop-shadow(0 5px 3px #174b5750)}
+.dolphin-body{fill:#eaf6f1;stroke:#397b88;stroke-width:2.5;stroke-linejoin:round}
+.dolphin-tail,.dolphin-fin{fill:#c5e3df;stroke:#397b88;stroke-width:2.4;stroke-linejoin:round}
+.dolphin-belly{fill:#fffdf1;opacity:.95}.dolphin-eye{fill:#183f4b;stroke:#fff;stroke-width:1.2}
+.dolphin-smile{fill:none;stroke:#315c66;stroke-width:2.5;stroke-linecap:round}.dolphin-shine{fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;opacity:.8}
+.talk-avatar{flex:0 0 82px;width:82px;line-height:0}.talk-dolphin-art{width:100%;filter:drop-shadow(0 4px 2px #174b5730)}
+@keyframes dolphin-pop{0%{opacity:0;transform:translate(-50%,12%) scale(.5)}25%{opacity:1;transform:translate(-50%,-62%) scale(1.05)}65%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,10%) scale(.72)}}
+.ocean-bubbles{position:absolute;inset:0;pointer-events:none}.ocean-bubbles i{position:absolute;bottom:-20px;width:8px;height:8px;border:1px solid #e9ffff80;border-radius:50%;animation:bubble-rise 7s linear infinite}.ocean-bubbles i:nth-child(1){left:16%;animation-delay:0s}.ocean-bubbles i:nth-child(2){left:37%;animation-delay:2s}.ocean-bubbles i:nth-child(3){left:68%;animation-delay:4s}.ocean-bubbles i:nth-child(4){left:82%;animation-delay:1s}.ocean-bubbles i:nth-child(5){left:54%;animation-delay:5s}
+@keyframes bubble-rise{to{transform:translateY(-560px) translateX(25px);opacity:0}}
+.dolphin-status{text-align:center;min-height:88px;padding:16px 8px 4px}.status-step{font-size:.68rem;font-weight:800;letter-spacing:.18em;color:#4f8584;margin:0 0 4px}.dolphin-status>p:nth-child(2){margin:0;color:#425d5d;font-weight:600}
+.observation-count{display:flex;justify-content:center;gap:7px;margin-top:12px}.observation-count span{width:7px;height:7px;border-radius:50%;background:#cbdad6}.observation-count span.is-done{background:#4f9691}
+.dolphin-talk{display:flex;align-items:flex-start;gap:10px;width:min(100%,560px);margin:10px auto 0;animation:talk-in .3s ease-out}.talk-avatar{font-size:2rem;line-height:1.2}.talk-bubble{position:relative;flex:1;background:#fffdf8;border:1px solid #d8e5de;border-radius:16px;padding:14px 17px;box-shadow:0 8px 22px #254f4b0c}.talk-bubble:before{content:"";position:absolute;left:-7px;top:17px;width:12px;height:12px;background:#fffdf8;border-left:1px solid #d8e5de;border-bottom:1px solid #d8e5de;transform:rotate(45deg)}.talk-bubble p{margin:0;color:#365958;font-weight:650;line-height:1.7}.talk-bubble .button{margin-top:10px;min-height:42px;width:100%}
+@keyframes talk-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.dolphin-footer{text-align:center;color:#829693;font-size:.75rem;margin:18px 0 0}
+.dolphin-call{display:inline-block;margin:6px 0 2px;font-size:1.35rem;font-weight:800;letter-spacing:.08em;color:#477d80}.dolphin-call span{display:inline-block;font-size:2.75em;line-height:.72;vertical-align:-.16em;color:#245e68;font-weight:900;letter-spacing:-.12em;text-shadow:0 2px 0 #c5e3df,0 5px 12px #245e6833;transform:scaleX(1.04)}
+@media(max-width:520px){.talk-avatar{flex-basis:68px;width:68px}.dolphin-call span{font-size:2.55em}.dolphin-shell{width:min(100% - 20px,900px);padding-top:16px}.dolphin-heading{padding:18px 4px 14px}.ocean-stage{height:390px;border-radius:18px}.ocean-ellipse{width:86%;height:66%}.dolphin-spot{width:35px;height:35px;font-size:.8rem}.dolphin-status{min-height:78px}.dolphin-talk{margin-top:8px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+
+/* イルカを細身にし、泳ぐ姿のシルエットをすっきりさせる */
+.dolphin-art{transform:scaleX(1.12) scaleY(.78);transform-origin:50% 58%;}
+.talk-dolphin-art{transform:scaleX(1.12) scaleY(.78);transform-origin:50% 58%;}
+/* 会話はプレイ画面の中に重ねて表示 */
+.dolphin-talk{position:absolute;z-index:8;left:50%;bottom:5%;transform:translateX(-50%);width:min(88%,520px);margin:0;align-items:flex-end;gap:8px;padding:8px 10px;border-radius:18px;background:#164e5a35;backdrop-filter:blur(5px);}
+.dolphin-talk[hidden]{display:none;}
+.talk-avatar{flex:0 0 clamp(66px,12vw,94px);width:clamp(66px,12vw,94px);filter:drop-shadow(0 5px 5px #103f4b66);}
+.talk-bubble{background:#fffdf8;border:1px solid #d8e5de;border-radius:16px;padding:12px 15px;box-shadow:0 8px 22px #123e4b30;}
+.talk-bubble:before{left:-7px;top:auto;bottom:17px;}
+.talk-bubble p{font-size:clamp(.83rem,2.4vw,1rem);}
+.talk-bubble .button{margin-top:8px;min-height:40px;width:100%;font-size:.9rem;}
+.dolphin-call{font-size:1.5rem;margin:12px 0 4px;}
+.dolphin-call span{font-size:4.8em;line-height:.62;vertical-align:-.2em;letter-spacing:-.15em;text-shadow:0 3px 0 #c5e3df,0 8px 18px #245e6844;transform:scaleX(1.08);}
+@media(max-width:520px){.dolphin-talk{width:94%;bottom:4%;padding:6px 7px;gap:5px}.talk-avatar{flex-basis:58px;width:58px}.talk-bubble{padding:10px 11px}.talk-bubble p{font-size:.82rem}.dolphin-call span{font-size:4.35em;}}
+
+
+/* ★3 v4 refinements */
+.dolphin-art{transform:scaleX(1.16) scaleY(.62);transform-origin:50% 58%;}
+.dolphin-body{fill:#43c9ed;stroke:#087b9b;stroke-width:2.5;}
+.dolphin-tail,.dolphin-fin{fill:#24b9e2;stroke:#087b9b;stroke-width:2.4;}
+.dolphin-belly{fill:#e8fbff;opacity:.98;}
+.dolphin-eye{fill:#073c55;stroke:#fff;stroke-width:1.4;}
+.dolphin-smile{stroke:#075b78;}
+.dolphin-shine{stroke:#fff;opacity:.95;}
+.dolphin-talk{position:absolute;z-index:6;left:50%;top:-8px;transform:translate(-50%,-100%);width:min(68vw,300px);margin:0;display:block;pointer-events:auto;}
+.dolphin-talk[hidden]{display:none;}
+.talk-bubble{position:relative;background:#fffdf8;border:1px solid #d8e5de;border-radius:16px;padding:10px 13px;box-shadow:0 8px 22px #123e4b30;}
+.talk-bubble:before{content:"";position:absolute;left:50%;bottom:-7px;top:auto;width:12px;height:12px;background:#fffdf8;border-right:1px solid #d8e5de;border-bottom:1px solid #d8e5de;transform:translateX(-50%) rotate(45deg);}
+.talk-bubble p{margin:0;color:#365958;font-size:clamp(.78rem,2.2vw,.94rem);font-weight:700;line-height:1.55;text-align:center;}
+.talk-bubble .button{position:relative;z-index:1;margin-top:8px;min-height:38px;width:100%;font-size:.86rem;}
+.dolphin-call{font-size:1.5rem;line-height:1.5;}
+.dolphin-call span{font-size:3.35em;line-height:1;vertical-align:-.12em;letter-spacing:-.04em;margin-right:.08em;transform:none;text-shadow:0 2px 0 #c5e3df,0 5px 12px #245e6844;}
+@media(max-width:520px){
+  .dolphin-art{transform:scaleX(1.16) scaleY(.62);}
+  .dolphin-talk{width:min(76vw,270px);top:-6px;}
+  .talk-bubble{padding:9px 10px;}
+  .talk-bubble p{font-size:.78rem;}
+  .dolphin-call span{font-size:3.05em;}
+}
+
+
+/* ★3 v5: 会話はイルカを沈めた後、操作エリアと重ならない海面下部に表示 */
+.ocean-ellipse{top:43%;height:64%;}
+.dolphin-talk{position:absolute;z-index:8;left:50%;bottom:8px;top:auto;transform:translateX(-50%);display:block;width:min(58%,420px);margin:0;padding:0;background:transparent;backdrop-filter:none;pointer-events:none;}
+.dolphin-talk[hidden]{display:none;}
+.talk-bubble{position:relative;width:100%;padding:9px 13px;border:1px solid #d8e5de;border-radius:15px;background:#fffdf8;box-shadow:0 5px 16px #123e4b25;pointer-events:auto;}
+.talk-bubble:before{left:50%;top:-7px;bottom:auto;width:12px;height:12px;background:#fffdf8;border-left:1px solid #d8e5de;border-top:1px solid #d8e5de;border-right:0;border-bottom:0;transform:translateX(-50%) rotate(45deg);}
+.talk-bubble p{margin:0;text-align:center;font-size:clamp(.78rem,2vw,.92rem);line-height:1.45;}
+.talk-bubble .button{margin-top:7px;min-height:36px;width:100%;font-size:.84rem;pointer-events:auto;}
+@media(max-width:520px){
+  .ocean-ellipse{top:42%;height:60%;}
+  .dolphin-talk{width:min(78%,340px);bottom:7px;}
+  .talk-bubble{padding:8px 10px;}
+  .talk-bubble p{font-size:.78rem;}
+}
+
+
+/* ★3 v8: 楕円を拡大し、配置座標を楕円自身の座標系で計算 */
+.ocean-ellipse{width:min(88%,760px);height:70%;top:43%;}
+@media(max-width:520px){
+  .ocean-ellipse{width:92%;height:66%;top:42%;}
+}

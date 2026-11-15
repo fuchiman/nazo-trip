@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: light;
+  --paper: #f4f0e8;
+  --ink: #242a2b;
+  --muted: #747a78;
+  --line: #ded8cc;
+  --accent: #355d58;
+  --accent-dark: #254540;
+  --panel: #fffdf8;
+  --locked: #e9e5dd;
+  font-family: "Noto Sans JP", "Yu Gothic", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+}
+button, a { font: inherit; }
+.top-shell, .episode-shell {
+  width: min(100% - 32px, 720px);
+  margin: 0 auto;
+  padding: 48px 0 36px;
+}
+.top-header { text-align: center; padding: 22px 8px 34px; }
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .2em;
+}
+h1 { margin: 0; font-size: clamp(2rem, 8vw, 3.2rem); letter-spacing: .06em; }
+.lead { margin: 14px 0 0; color: var(--muted); }
+.panel, .episode-panel {
+  padding: clamp(20px, 5vw, 34px);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--panel);
+  box-shadow: 0 12px 35px rgb(44 39 28 / 5%);
+}
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+h2 { margin: 0; font-size: 1.15rem; }
+.muted { color: var(--muted); font-size: .82rem; margin: 0; }
+.episode-list { list-style: none; padding: 0; margin: 22px 0 26px; }
+.episode-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 12px;
+  border-top: 1px solid var(--line);
+}
+.episode-item:last-child { border-bottom: 1px solid var(--line); }
+.episode-number {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #e8eee9;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: .8rem;
+}
+.episode-name { flex: 1; font-weight: 600; }
+.episode-status { color: var(--muted); font-size: .76rem; white-space: nowrap; }
+.episode-item.is-locked { opacity: .52; }
+.episode-item.is-cleared .episode-number { background: var(--accent); color: white; }
+.episode-link { color: inherit; text-decoration: none; }
+.episode-link:focus-visible, button:focus-visible, a:focus-visible {
+  outline: 3px solid #c18b42;
+  outline-offset: 3px;
+}
+.top-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.button {
+  min-height: 48px;
+  border: 0;
+  border-radius: 10px;
+  padding: 0 20px;
+  cursor: pointer;
+  font-weight: 700;
+  text-align: center;
+}
+.button-primary { background: var(--accent); color: white; flex: 1; }
+.button-primary:hover { background: var(--accent-dark); }
+.button-quiet { background: #efede7; color: var(--ink); }
+.button:disabled { opacity: .45; cursor: not-allowed; }
+.top-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: .76rem;
+}
+.top-footer a { color: var(--accent); }
+.episode-shell { max-width: 680px; }
+.episode-topline { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+.back-link { color: var(--accent); text-decoration: none; font-size: .9rem; }
+.episode-panel h1 { font-size: clamp(1.6rem, 7vw, 2.5rem); margin: 10px 0 22px; }
+.episode-copy { line-height: 1.9; color: #454b49; }
+.episode-placeholder {
+  margin: 24px 0;
+  padding: 22px;
+  border: 1px dashed #c9c1b3;
+  border-radius: 12px;
+  background: #f8f5ee;
+  color: var(--muted);
+  text-align: center;
+}
+.dev-note {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: #8a6a3e;
+  font-size: .78rem;
+  line-height: 1.7;
+}
+@media (max-width: 480px) {
+  .top-shell, .episode-shell { width: min(100% - 22px, 720px); padding-top: 24px; }
+  .episode-status { font-size: .7rem; }
+  .top-footer { flex-direction: column; }
+}
+
+
+/* 搭乗券は各エピソードのプレイ画面内・左上に表示する */
+.boarding-pass-indicator{
+  position:absolute;z-index:18;top:10px;left:10px;
+  display:flex;align-items:center;gap:5px;
+  padding:5px 9px;border:1px solid #d2bd83;border-radius:999px;
+  background:#fff8e9f2;color:#705523;
+  box-shadow:0 2px 8px #28201424;
+  font-size:.66rem;font-weight:800;line-height:1.2;
+  pointer-events:none;white-space:nowrap;
+}
+.boarding-pass-indicator span:first-child{font-size:.9rem}

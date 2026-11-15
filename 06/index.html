@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="#e8edf0" name="theme-color"/>
+  <title>
+   &starf;6 最後の忘れ物｜修学旅行の謎
+  </title>
+  <link href="../css/common.css" rel="stylesheet"/>
+  <link href="../css/episode06.css" rel="stylesheet"/>
+  <link href="../css/theme.css" rel="stylesheet"/>
+  <script defer="" src="../js/common.js">
+  </script>
+  <script defer="" src="../js/story-text.js">
+  </script>
+  <script defer="" src="../js/episode06.js">
+  </script>
+ </head>
+ <body data-episode="6">
+  <main class="airport-shell">
+   <header class="airport-header">
+    <a class="back-link" href="../index.html">
+     &larr; トップへ
+    </a>
+    <button class="episode-chip" data-episode-number="" id="episode-open" type="button">
+     EPISODE &starf;6 ⓘ
+    </button>
+   </header>
+   <section class="airport-intro">
+    <p class="room-kicker">
+     FINAL EPISODE / DEPARTURE
+    </p>
+    <h1 data-episode-title="">
+     最後の忘れ物
+    </h1>
+    <p>
+     帰りの便に乗る前に、最後の忘れ物を探そう。
+    </p>
+   </section>
+   <section aria-label="空港の出発ロビー" class="airport-scene" id="airport-scene">
+    <div class="airport-window">
+     <div class="runway">
+     </div>
+     <div class="plane-silhouette">
+      ✈
+     </div>
+    </div>
+    <div class="airport-sign">
+     DEPARTURES
+     <span>
+      出発
+     </span>
+    </div>
+    <div class="airport-counter-area">
+     <button aria-label="カウンターの手紙を調べる" class="airport-counter" id="counter-button" type="button">
+      <span class="counter-sign">
+       INFORMATION
+      </span>
+      <span class="counter-top">
+      </span>
+      <span class="counter-front">
+      </span>
+      <span class="letter-on-counter">
+       <span>
+        ✉
+       </span>
+      </span>
+     </button>
+     <span class="counter-caption">
+      カウンターの上に手紙がある。
+     </span>
+    </div>
+    <div class="gate-area">
+     <div class="gate-sign">
+      <small>
+       BOARDING GATE
+      </small>
+      <strong>
+       08
+      </strong>
+      <span>
+       搭乗口
+      </span>
+     </div>
+     <button aria-label="搭乗ゲートを通る" class="boarding-gate" id="gate-button" type="button">
+      <span class="gate-frame">
+       <i>
+       </i>
+       <i>
+       </i>
+       <b class="gate-light">
+       </b>
+      </span>
+      <span class="gate-label">
+       GATE 08
+      </span>
+     </button>
+     <span class="gate-caption" id="gate-caption">
+      搭乗券を用意してゲートへ。
+     </span>
+    </div>
+    <div class="airport-floor">
+    </div>
+   </section>
+   <section class="airport-status">
+    <span id="airport-status-step">
+     DEPARTURE LOBBY
+    </span>
+    <p id="airport-status-message">
+     カウンターに手紙が置かれている。
+    </p>
+   </section>
+  </main>
+  <div class="modal-backdrop" id="episode-modal">
+   <section class="object-modal">
+    <p class="panel-eyebrow">
+     EPISODE &starf;6 / FINAL
+    </p>
+    <h2>
+     最後の忘れ物
+    </h2>
+    <p class="modal-description" id="episode-intro-text">
+    </p>
+    <button class="button button-primary" id="episode-start" type="button">
+     空港を見回す
+    </button>
+   </section>
+  </div>
+  <div class="modal-backdrop letter-backdrop" hidden="" id="letter-modal">
+   <section class="letter-zoom-panel">
+    <button aria-label="閉じる" class="modal-close" id="letter-close" type="button">
+     &times;
+    </button>
+    <div class="letter-paper">
+     <p class="letter-eyebrow">
+      A LETTER FOR YOU
+     </p>
+     <h2 id="letter-title">
+     </h2>
+     <div id="letter-paragraphs">
+     </div>
+     <p class="letter-sign" id="letter-sign">
+     </p>
+    </div>
+    <button class="button button-primary letter-close-button" id="letter-close-button" type="button">
+     手紙をしまう
+    </button>
+   </section>
+  </div>
+  <div class="modal-backdrop" hidden="" id="gate-modal">
+   <section class="object-modal gate-check-modal">
+    <p class="panel-eyebrow">
+     BOARDING CHECK
+    </p>
+    <h2 id="gate-check-title">
+    </h2>
+    <div class="mini-ticket">
+     <span>
+      ✈ SORA AIR
+     </span>
+     <strong>
+      SA 206
+     </strong>
+     <small>
+      GATE 08　SEAT 18A
+     </small>
+    </div>
+    <p class="modal-description" id="gate-check-description">
+    </p>
+    <button class="button button-primary" id="gate-pass-button" type="button">
+     ゲートを通過する
+    </button>
+    <button class="button button-quiet" id="gate-cancel-button" type="button">
+     戻る
+    </button>
+   </section>
+  </div>
+  <div class="modal-backdrop clear-screen-backdrop" hidden="" id="game-clear-modal">
+   <section class="game-clear-panel">
+    <p class="clear-kicker">
+     SCHOOL TRIP MYSTERY
+    </p>
+    <div class="clear-stamp">
+     ✦
+    </div>
+    <h2 id="clear-title">
+     GAME CLEAR!
+    </h2>
+    <p class="clear-japanese" id="clear-subtitle">
+     修学旅行、完結。
+    </p>
+    <p class="clear-thanks" id="clear-message">
+     最後の忘れ物を見つけ、無事に搭乗ゲートを通過した。
+    </p>
+    <div class="first-clear-registration" id="first-clear-registration">
+     <label for="clear-nickname">
+      クリア者一覧に掲載するニックネーム
+     </label>
+     <input autocomplete="nickname" id="clear-nickname" maxlength="20" placeholder="ニックネームを入力" type="text"/>
+     <p aria-live="polite" class="nickname-error" id="nickname-error">
+     </p>
+     <button class="button button-primary" id="nickname-save-button" type="button">
+      登録する
+     </button>
+    </div>
+    <div class="saved-clear-record" hidden="" id="saved-clear-record">
+     <p>
+      初回クリア記録
+     </p>
+     <strong id="saved-nickname">
+     </strong>
+     <small id="saved-clear-date">
+     </small>
+    </div>
+    <div class="post-clear-actions" hidden="" id="post-clear-actions">
+     <a class="button button-primary" href="../clearers.html">
+      クリア者一覧を見る
+     </a>
+     <a class="button button-quiet" href="../index.html">
+      トップに戻る
+     </a>
+    </div>
+   </section>
+  </div>
+ </body>
+</html>
+

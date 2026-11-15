@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="#e7f2f2" name="theme-color"/>
+  <title>
+   &starf;3 ドルフィンにさわろう｜修学旅行の謎
+  </title>
+  <link href="../css/common.css" rel="stylesheet"/>
+  <link href="../css/episode03.css" rel="stylesheet"/>
+  <link href="../css/theme.css" rel="stylesheet"/>
+  <script defer="" src="../js/common.js">
+  </script>
+  <script defer="" src="../js/episode03.js">
+  </script>
+ </head>
+ <body data-episode="3">
+  <main class="dolphin-shell">
+   <header class="dolphin-header">
+    <a class="back-link" href="../index.html">
+     &larr; トップへ
+    </a>
+    <button class="episode-chip" id="episode-open" type="button">
+     EPISODE &starf;3 ⓘ
+    </button>
+   </header>
+   <section class="dolphin-heading">
+    <p class="dolphin-kicker">
+     DAY 1 / OCEAN
+    </p>
+    <h1>
+     ドルフィンにさわろう
+    </h1>
+    <p>
+     海面のどこかから、イルカが顔を出す。
+    </p>
+   </section>
+   <section aria-label="イルカが現れる海" class="ocean-stage" id="ocean-stage">
+    <div class="ocean-sunlight">
+    </div>
+    <div class="ocean-horizon">
+    </div>
+    <div class="ocean-ripple ripple-a">
+    </div>
+    <div class="ocean-ripple ripple-b">
+    </div>
+    <div class="ocean-ellipse" id="ocean-ellipse">
+     <div class="ocean-inner">
+     </div>
+     <div class="dolphin-spots" id="dolphin-spots">
+     </div>
+     <div class="dolphin-splash" id="dolphin-splash">
+      <svg aria-label="イルカ" class="dolphin-art" role="img" viewbox="0 0 190 130">
+       <path class="dolphin-tail" d="M35 83 Q17 68 8 53 Q27 56 43 69 Q39 48 49 36 Q55 59 54 78Z">
+       </path>
+       <path class="dolphin-body" d="M34 83 C49 62 66 35 99 26 C124 19 148 30 159 48 L181 48 Q187 49 181 55 L160 65 C153 88 133 101 108 98 C83 95 66 79 51 84 L39 105 Q34 111 31 103 L39 84Z">
+       </path>
+       <path class="dolphin-fin" d="M91 31 Q95 9 116 5 Q112 25 103 35Z">
+       </path>
+       <path class="dolphin-fin" d="M102 91 Q116 111 139 108 Q126 91 117 85Z">
+       </path>
+       <path class="dolphin-belly" d="M72 76 Q104 88 151 66 Q145 91 119 95 Q93 97 72 76Z">
+       </path>
+       <circle class="dolphin-eye" cx="145" cy="49" r="4">
+       </circle>
+       <path class="dolphin-smile" d="M157 64 Q169 67 178 59">
+       </path>
+       <path class="dolphin-shine" d="M71 56 Q91 34 117 33">
+       </path>
+      </svg>
+     </div>
+    </div>
+    <section aria-live="polite" class="dolphin-talk" hidden="" id="dolphin-talk">
+     <div class="talk-bubble">
+      <p id="talk-message">
+       次の3回はどこから出てくるか、あててみて！
+      </p>
+      <button class="button button-primary" hidden="" id="retry-button" type="button">
+       もう一度チャレンジする
+      </button>
+     </div>
+    </section>
+    <div aria-hidden="true" class="ocean-bubbles">
+     <i>
+     </i>
+     <i>
+     </i>
+     <i>
+     </i>
+     <i>
+     </i>
+     <i>
+     </i>
+    </div>
+   </section>
+   <section class="dolphin-status">
+    <p class="status-step" id="status-step">
+     OBSERVATION
+    </p>
+    <p aria-live="polite" id="status-message">
+     海をよく見てみよう。
+    </p>
+    <div class="observation-count" id="observation-count">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </div>
+   </section>
+  </main>
+  <div class="modal-backdrop" id="episode-modal">
+   <section class="object-modal">
+    <button aria-label="閉じる" class="modal-close" id="episode-close" type="button">
+     &times;
+    </button>
+    <p class="panel-eyebrow">
+     EPISODE &starf;3
+    </p>
+    <h2>
+     ドルフィンにさわろう
+    </h2>
+    <p class="modal-description">
+     海の中から、イルカの声が聞こえる。
+     <br/>
+     <span class="dolphin-call">
+      <span>
+       キ
+      </span>
+      ュー！
+     </span>
+     <br/>
+     どうやら、遊んでほしいみたいだ。
+    </p>
+    <button class="button button-primary" id="episode-start" type="button">
+     海をのぞく
+    </button>
+   </section>
+  </div>
+  <div class="modal-backdrop" hidden="" id="clear-modal">
+   <section class="object-modal message-dialog">
+    <p class="panel-eyebrow">
+     CLEAR
+    </p>
+    <h2>
+     クリア！
+    </h2>
+    <p>
+     次に進む
+    </p>
+    <button class="button button-primary" id="clear-next" type="button">
+     次に進む
+    </button>
+   </section>
+  </div>
+ </body>
+</html>
+

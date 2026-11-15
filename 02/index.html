@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="#e8f0f3" name="theme-color"/>
+  <title>
+   &starf;2 飛行機を出発させる｜修学旅行の謎
+  </title>
+  <link href="../css/common.css" rel="stylesheet"/>
+  <link href="../css/episode02.css" rel="stylesheet"/>
+  <link href="../css/theme.css" rel="stylesheet"/>
+  <script defer="" src="../js/common.js">
+  </script>
+  <script defer="" src="../js/episode02.js">
+  </script>
+ </head>
+ <body data-episode="2">
+  <main class="airport-shell">
+   <header class="airport-header">
+    <a class="back-link" href="../index.html">
+     &larr; トップへ
+    </a>
+    <button class="episode-chip" id="episode-open" type="button">
+     EPISODE &starf;2 ⓘ
+    </button>
+   </header>
+   <section class="airport-heading">
+    <p class="airport-kicker">
+     DAY 1 / DEPARTURE
+    </p>
+    <h1>
+     飛行機を出発させる
+    </h1>
+    <p>
+     滑走路の先で、大きな飛行機が止まっている。
+    </p>
+   </section>
+   <section aria-label="空港の滑走路" class="airport-view">
+    <div class="sky-glow">
+    </div>
+    <div class="distant-cloud cloud-one">
+    </div>
+    <div class="distant-cloud cloud-two">
+    </div>
+    <div class="distant-horizon">
+    </div>
+    <div class="runway">
+     <div class="runway-edge runway-edge-left">
+     </div>
+     <div class="runway-edge runway-edge-right">
+     </div>
+     <div class="runway-centerline">
+     </div>
+     <div class="runway-number">
+      25
+     </div>
+    </div>
+    <div aria-hidden="true" class="traffic-plane" id="traffic-plane">
+     <svg viewbox="0 0 120 52">
+      <path d="M4 25 L48 21 L67 3 Q70 1 73 4 L65 21 L105 23 Q116 24 116 27 Q116 30 105 30 L65 31 L74 47 Q71 50 67 47 L48 31 L4 29 Q0 28 0 27 Q0 26 4 25Z">
+      </path>
+     </svg>
+    </div>
+    <div class="main-plane-wrap" id="main-plane-wrap">
+     <div class="plane-shadow">
+     </div>
+     <svg aria-label="滑走路に止まっている旅客機" class="main-plane" id="main-plane" role="img" viewbox="0 0 600 210">
+      <defs>
+       <lineargradient id="fuselage" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0" stop-color="#ffffff">
+        </stop>
+        <stop offset=".58" stop-color="#edf2f3">
+        </stop>
+        <stop offset="1" stop-color="#c5d0d3">
+        </stop>
+       </lineargradient>
+       <lineargradient id="wing" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0" stop-color="#dce5e8">
+        </stop>
+        <stop offset="1" stop-color="#a4b3b8">
+        </stop>
+       </lineargradient>
+       <lineargradient id="engine" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0" stop-color="#83969d">
+        </stop>
+        <stop offset="1" stop-color="#40545c">
+        </stop>
+       </lineargradient>
+      </defs>
+      <!-- far wing, seen from the side -->
+      <path d="M255 105 L330 76 Q343 72 354 78 L390 105 L362 113 L300 111Z" fill="url(#wing)" stroke="#9eafb5" stroke-width="2">
+      </path>
+      <!-- tailplane and vertical fin -->
+      <path d="M82 105 L30 87 Q24 84 29 80 L111 98 L139 101 L139 116 L108 119 L30 140 Q24 137 30 132 L82 113Z" fill="url(#wing)" stroke="#9eafb5" stroke-width="2">
+      </path>
+      <path d="M91 102 L69 38 Q67 31 76 34 L139 94 L154 101 L154 118 L130 121 L76 158 Q68 161 70 153 L91 114Z" fill="#d6e0e3" stroke="#9eafb5" stroke-width="2">
+      </path>
+      <!-- near wing -->
+      <path d="M260 113 L351 127 Q364 130 370 140 L382 157 Q378 164 367 160 L252 126Z" fill="url(#wing)" stroke="#9eafb5" stroke-width="2">
+      </path>
+      <!-- engines -->
+      <path d="M292 132 Q309 122 333 130 Q347 135 344 148 Q340 160 316 157 L293 149Z" fill="url(#engine)" stroke="#52666d" stroke-width="2">
+      </path>
+      <ellipse cx="338" cy="144" fill="#263b43" rx="5" ry="9">
+      </ellipse>
+      <!-- fuselage: nose points right -->
+      <path d="M28 109 Q42 84 94 84 L527 84 Q563 88 582 106 Q567 130 527 134 L94 134 Q43 132 28 109Z" fill="url(#fuselage)" stroke="#9aaab0" stroke-width="2">
+      </path>
+      <path d="M45 101 Q65 90 105 90 L521 90" fill="none" opacity=".9" stroke="#fff" stroke-width="3">
+      </path>
+      <!-- cockpit and passenger windows -->
+      <path d="M542 91 Q565 97 576 107 Q566 121 542 127 L528 122 L531 96Z" fill="#4f6c7b">
+      </path>
+      <g fill="#66818e">
+       <rect height="6" rx="2" width="9" x="160" y="94">
+       </rect>
+       <rect height="6" rx="2" width="9" x="181" y="94">
+       </rect>
+       <rect height="6" rx="2" width="9" x="202" y="94">
+       </rect>
+       <rect height="6" rx="2" width="9" x="223" y="94">
+       </rect>
+       <rect height="6" rx="2" width="9" x="244" y="94">
+       </rect>
+       <rect height="6" rx="2" width="9" x="265" y="94">
+       </rect>
+       <rect height="6" rx="2" width="9" x="286" y="94">
+       </rect>
+       <rect height="6" rx="2" width="9" x="307" y="94">
+       </rect>
+       <rect height="6" rx="2" width="9" x="328" y="94">
+       </rect>
+       <rect height="6" rx="2" width="9" x="349" y="94">
+       </rect>
+       <rect height="6" rx="2" width="9" x="370" y="94">
+       </rect>
+       <rect height="6" rx="2" width="9" x="391" y="94">
+       </rect>
+       <rect height="6" rx="2" width="9" x="412" y="94">
+       </rect>
+       <rect height="6" rx="2" width="9" x="433" y="94">
+       </rect>
+       <rect height="6" rx="2" width="9" x="454" y="94">
+       </rect>
+       <rect height="6" rx="2" width="9" x="475" y="94">
+       </rect>
+      </g>
+      <path d="M104 128 L520 128" opacity=".55" stroke="#477e8c" stroke-width="2">
+      </path>
+      <!-- the hidden character is a large painted fuselage marking -->
+      <g aria-hidden="true" class="plane-letter" id="plane-letter">
+       <path d="M365 108 L374 108 L366 126 L357 126Z" fill="#d5a94f">
+       </path>
+       <path d="M377 108 L384 108 L376 126 L369 126Z" fill="#4f7f91" opacity=".9">
+       </path>
+       <text text-anchor="middle" x="416" y="126">
+        ノ
+       </text>
+      </g>
+      <!-- landing gear touching the runway -->
+      <path d="M180 133 L180 160 M180 151 L170 158 M380 133 L380 160 M380 151 L390 158" fill="none" stroke="#566970" stroke-linecap="round" stroke-width="4">
+      </path>
+      <circle cx="170" cy="165" fill="#34444a" r="7">
+      </circle>
+      <circle cx="188" cy="165" fill="#34444a" r="7">
+      </circle>
+      <circle cx="380" cy="165" fill="#34444a" r="7">
+      </circle>
+      <circle cx="398" cy="165" fill="#34444a" r="7">
+      </circle>
+     </svg>
+    </div>
+    <div class="airport-marking">
+     KOBE  &middot;  DEPARTURE
+    </div>
+   </section>
+   <section class="airport-status">
+    <div class="status-light">
+     <span class="light-dot" id="status-dot">
+     </span>
+     <span id="status-label">
+      待機中
+     </span>
+    </div>
+    <p id="status-message">
+     エンジンは動いているのに、初速が足りない。
+    </p>
+   </section>
+   <section aria-live="polite" class="airport-controls">
+    <button class="button button-primary" hidden="" id="motion-start" type="button">
+     センサーを再試行
+    </button>
+    <p aria-live="polite" id="motion-help">
+    </p>
+    <button class="manual-accelerate" hidden="" id="manual-accelerate" type="button">
+     出発させる
+    </button>
+   </section>
+   <footer class="airport-footer">
+    <span>
+     空の様子が、どこか気になる。
+    </span>
+    <span>
+     進行状況は自動保存されます
+    </span>
+   </footer>
+  </main>
+  <div class="modal-backdrop" id="episode-modal">
+   <section class="object-modal">
+    <button aria-label="閉じる" class="modal-close" id="episode-close" type="button">
+     &times;
+    </button>
+    <p class="panel-eyebrow">
+     EPISODE &starf;2
+    </p>
+    <h2>
+     飛行機を出発させる
+    </h2>
+    <p class="modal-description">
+     飛行機の準備はできているらしい。
+     <br/>
+     ところが、初速が足りず出発できないという。
+     <br/>
+     エンジン音だけが、滑走路に響いている。
+    </p>
+    <button class="button button-primary" id="episode-start" type="button">
+     閉じる
+    </button>
+   </section>
+  </div>
+  <div class="modal-backdrop" hidden="" id="depart-modal">
+   <section class="object-modal message-dialog">
+    <p class="panel-eyebrow">
+     TAKE OFF
+    </p>
+    <h2>
+     出発した！
+    </h2>
+    <p>
+     飛行機は勢いよく滑走路を進み、空へ飛び立った。
+    </p>
+    <button class="button button-primary" id="depart-close" type="button">
+     次へ
+    </button>
+   </section>
+  </div>
+  <div class="modal-backdrop" hidden="" id="clear-modal">
+   <section class="object-modal message-dialog">
+    <p class="panel-eyebrow">
+     CLEAR
+    </p>
+    <h2>
+     クリア！
+    </h2>
+    <p>
+     次に進む
+    </p>
+    <button class="button button-primary" id="clear-next" type="button">
+     次に進む
+    </button>
+   </section>
+  </div>
+ </body>
+</html>
+

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="#f4f0e8" name="theme-color"/>
+  <title>
+   &starf;5 流れ星を見逃した｜修学旅行の謎
+  </title>
+  <link href="../css/common.css" rel="stylesheet"/>
+  <link href="../css/episode05.css" rel="stylesheet"/>
+  <link href="../css/theme.css" rel="stylesheet"/>
+  <script defer="" src="../js/common.js">
+  </script>
+  <script defer="" src="../js/episode05.js">
+  </script>
+ </head>
+ <body data-episode="5">
+  <main class="episode-shell">
+   <div class="episode-topline">
+    <a class="back-link" href="../index.html">
+     &larr; トップへ
+    </a>
+    <button class="episode-chip" id="episode-open" type="button">
+     EPISODE &starf;5 ⓘ
+    </button>
+   </div>
+   <section class="episode-panel">
+    <p class="eyebrow">
+     SCHOOL TRIP MYSTERY
+    </p>
+    <h1 data-episode-title="">
+     流れ星を見逃した
+    </h1>
+    <div aria-label="星空を眺める丘" class="sky-stage" id="sky-stage">
+     <div class="sky-sun-container" hidden="" id="sky-sun-container">
+      <div class="sky-sun">
+      </div>
+     </div>
+     <div class="sky-stars-container" id="sky-stars-container">
+      <div class="star-dots">
+      </div>
+      <!-- カタカナの「コ」の字の星配置（線なし・星のみ） -->
+      <div class="ko-stars" hidden="" id="ko-stars">
+       <span class="ko-node" style="top: 26%; left: 32%;">
+       </span>
+       <span class="ko-node" style="top: 26%; left: 44%;">
+       </span>
+       <span class="ko-node" style="top: 26%; left: 56%;">
+       </span>
+       <span class="ko-node" style="top: 26%; left: 68%;">
+       </span>
+       <span class="ko-node" style="top: 38%; left: 68%;">
+       </span>
+       <span class="ko-node" style="top: 50%; left: 68%;">
+       </span>
+       <span class="ko-node" style="top: 62%; left: 68%;">
+       </span>
+       <span class="ko-node" style="top: 74%; left: 32%;">
+       </span>
+       <span class="ko-node" style="top: 74%; left: 44%;">
+       </span>
+       <span class="ko-node" style="top: 74%; left: 56%;">
+       </span>
+       <span class="ko-node" style="top: 74%; left: 68%;">
+       </span>
+      </div>
+     </div>
+     <div class="shooting-star" hidden="" id="shooting-star">
+     </div>
+     <div class="sky-horizon">
+     </div>
+    </div>
+    <div class="sky-status-area">
+     <p class="status-step" id="sky-status-step">
+      OBSERVATION
+     </p>
+     <p aria-live="polite" id="sky-status-message">
+      星空が広がっている。
+     </p>
+    </div>
+   </section>
+  </main>
+  <!-- 訪問時ダイアログ（毎回表示） -->
+  <div class="modal-backdrop" id="episode-modal">
+   <section class="object-modal">
+    <button aria-label="閉じる" class="modal-close" id="episode-close" type="button">
+     &times;
+    </button>
+    <p class="panel-eyebrow">
+     EPISODE &starf;5
+    </p>
+    <h2>
+     流れ星を見逃した
+    </h2>
+    <p class="modal-description">
+     「さっき流れ星が流れたらしい。ちょうど10分前だったんだって。見たかったのに&hellip;&hellip;。」
+    </p>
+    <button class="button button-primary" id="episode-start" type="button">
+     星空を眺める
+    </button>
+   </section>
+  </div>
+  <!-- 流れ星発見ダイアログ -->
+  <div class="modal-backdrop" hidden="" id="success-modal">
+   <section class="object-modal message-dialog">
+    <p class="panel-eyebrow">
+     DISCOVERY
+    </p>
+    <h2>
+     発見！
+    </h2>
+    <p class="modal-description">
+     「流れ星が見れた！」
+    </p>
+    <button class="button button-primary" id="success-close" type="button">
+     次へ
+    </button>
+   </section>
+  </div>
+  <!-- 共通クリアダイアログ -->
+  <div class="modal-backdrop" hidden="" id="clear-modal">
+   <section class="object-modal message-dialog">
+    <p class="panel-eyebrow">
+     CLEAR
+    </p>
+    <h2>
+     クリア！
+    </h2>
+    <p class="modal-description">
+     次に進む
+    </p>
+    <button class="button button-primary" id="clear-next" type="button">
+     次に進む
+    </button>
+   </section>
+  </div>
+ </body>
+</html>
+

@@ -1,0 +1,63 @@
+body[data-episode="2"]{background:linear-gradient(180deg,#e8f0f3 0%,#f4f0e8 78%)}
+.airport-shell{width:min(100% - 28px,960px);margin:0 auto;padding:22px 0 30px}
+.airport-header{display:flex;justify-content:space-between;align-items:center}
+.episode-chip{border:0;background:none;color:#526a6c;font-size:.75rem;font-weight:800;cursor:pointer}
+.airport-heading{text-align:center;padding:16px 0 18px}
+.airport-kicker{margin:0 0 8px;color:#5d7a84;font-size:.7rem;font-weight:800;letter-spacing:.2em}
+.airport-heading h1{font-size:clamp(1.7rem,6vw,2.6rem);margin:0}
+.airport-heading>p:last-child{margin:10px 0 0;color:#627078}
+.airport-view{height:clamp(330px,48vw,470px);position:relative;overflow:hidden;border:8px solid #fffdf8;border-radius:19px;background:linear-gradient(180deg,#b9d4df 0%,#e3edf0 48%,#c9d4c8 49%,#aebcb0 67%,#6e7d7c 68%,#46545a 100%);box-shadow:0 16px 38px #39403920;isolation:isolate}
+.sky-glow{position:absolute;inset:0 0 43%;background:linear-gradient(90deg,#dcebf0aa,#fff8e6aa 50%,#dcebf0aa)}
+.distant-cloud{position:absolute;width:150px;height:32px;border-radius:50%;background:#ffffff80;filter:blur(5px)}
+.cloud-one{top:18%;left:12%}.cloud-two{top:28%;right:14%;transform:scale(.72)}
+.distant-horizon{position:absolute;left:0;right:0;bottom:31%;height:17%;background:linear-gradient(180deg,#91a69b,#84968d);clip-path:polygon(0 50%,8% 45%,14% 60%,23% 25%,30% 50%,42% 38%,51% 55%,63% 15%,72% 48%,83% 35%,92% 53%,100% 42%,100% 100%,0 100%)}
+.runway{position:absolute;left:-3%;right:-3%;bottom:8%;height:28%;background:linear-gradient(180deg,#68767b,#3f4b50);overflow:hidden;border-top:3px solid #d6d8d0;border-bottom:3px solid #303b40}
+.runway-edge{position:absolute;top:0;bottom:0;width:3px;background:#e8e4d7;opacity:.72}.runway-edge-left{left:0}.runway-edge-right{right:0}
+.runway-centerline{position:absolute;left:0;right:0;top:calc(50% - 3px);height:6px;background:repeating-linear-gradient(90deg,#f5f0df 0 34px,transparent 34px 66px)}
+.runway-number{position:absolute;top:12%;left:50%;transform:translateX(-50%);font:700 17px Arial,sans-serif;color:#f4f0e5;opacity:.7}
+.traffic-plane{position:absolute;z-index:2;top:12%;left:0;width:52px;fill:#526b76;opacity:.75;filter:drop-shadow(0 2px 2px #526b7630);pointer-events:none}
+.traffic-plane svg{width:100%;display:block}
+.main-plane-wrap{position:absolute;z-index:4;width:min(78%,650px);left:50%;bottom:-1%;transform:translateX(-50%);transform-origin:50% 80%;transition:transform 2.2s cubic-bezier(.18,.72,.2,1),filter 1.5s}
+.main-plane{display:block;width:100%;overflow:visible;filter:drop-shadow(0 9px 5px #26343a40)}
+.plane-shadow{position:absolute;left:12%;right:10%;height:13%;bottom:-1%;border-radius:50%;background:#202b2e70;filter:blur(8px);transition:all 1.8s}
+.plane-letter{opacity:0;transition:opacity .65s}.main-plane-wrap.has-letter .plane-letter{opacity:1}.plane-letter text{font-family:"Yu Gothic","Noto Sans JP",sans-serif;font-size:21px;font-weight:600;fill:#567783;stroke:#f8fbf8;stroke-width:1px;paint-order:stroke;letter-spacing:-.08em;filter:drop-shadow(0 1px 1px #263b4328)}
+.airport-marking{position:absolute;z-index:3;bottom:12px;left:17px;color:#fff8;font:700 .58rem Arial,sans-serif;letter-spacing:.18em}
+.airport-view.is-launching .main-plane-wrap{transform:translate(28%,-115px) scale(.72) rotate(-7deg);filter:brightness(1.08)}
+.airport-view.is-launching .plane-shadow{opacity:.15;transform:scale(.7)}
+.airport-view.is-launched .main-plane-wrap{transform:translate(165%,-300px) scale(.22) rotate(-10deg);opacity:0}
+.airport-status{display:flex;justify-content:space-between;align-items:center;gap:14px;margin:15px 3px 8px}
+.status-light{display:flex;align-items:center;gap:8px;color:#50636a;font-size:.78rem;font-weight:700;white-space:nowrap}
+.light-dot{width:9px;height:9px;border-radius:50%;background:#d6a34e;box-shadow:0 0 0 4px #d6a34e20}
+.airport-status p{margin:0;color:#5c686a;font-size:.85rem;text-align:right}
+.airport-controls{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 18px;border:1px solid #d8dedb;border-radius:14px;background:#fffdf8d9}
+.airport-controls .button{min-width:160px;flex:0 0 auto}
+.airport-controls p{margin:0;color:#718080;font-size:.78rem;flex:1}.airport-controls p:empty{display:none}.airport-controls:has(p:empty){padding:0;border:0;background:transparent;min-height:0}
+.manual-accelerate{border:1px solid #bdc9c8;border-radius:9px;background:#eef3f1;padding:12px 16px;color:#3f5a5b;font-weight:700;cursor:pointer}
+.manual-accelerate[hidden]{display:none}
+.airport-footer{display:flex;justify-content:space-between;gap:12px;color:#77817c;font-size:.7rem;padding:13px 2px}
+.modal-backdrop{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:18px;background:#19232494}
+.modal-backdrop[hidden]{display:none}
+.object-modal{position:relative;width:min(100%,430px);padding:28px;border-radius:18px;background:#fffdf7;box-shadow:0 20px 60px #0004}
+.object-modal h2{margin:0 0 16px;font-size:1.5rem}
+.modal-close{position:absolute;top:10px;right:13px;z-index:5;width:36px;height:36px;border:0;border-radius:50%;background:#eeece5;font-size:1.4rem;cursor:pointer}
+.modal-description{color:#5e6864;line-height:1.85}
+.message-dialog .button,.object-modal>.button{width:100%;margin-top:12px}
+.message-dialog>p:not(.panel-eyebrow){color:#5e6864;line-height:1.8}
+.panel-eyebrow{color:#637b7b;font-size:.7rem;letter-spacing:.2em;font-weight:800;margin:0 0 8px}
+@media(max-width:600px){.airport-shell{width:min(100% - 20px,960px);padding-top:15px}.airport-view{height:390px}.main-plane-wrap{width:91%;bottom:-1%}.traffic-plane{width:43px}.airport-status{align-items:flex-start;flex-direction:column;gap:5px}.airport-status p{text-align:left}.airport-controls{gap:10px}.airport-controls .button{width:100%}.airport-controls p{flex-basis:100%}.airport-footer{flex-direction:column}.runway{height:30%;bottom:8%}}
+@media(prefers-reduced-motion:reduce){.main-plane-wrap,.plane-shadow,.plane-letter{transition:none!important}}
+
+#main-plane-wrap {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@media (pointer: fine) {
+  #main-plane-wrap {
+    cursor: grab;
+  }
+
+  #main-plane-wrap:active {
+    cursor: grabbing;
+  }
+}
